@@ -1,0 +1,14 @@
+# Jetbrains
+.idea/
+
+# Environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Mac DS_Store file
+*.DS_Store
+pyproject.toml
+*.csv
