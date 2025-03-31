@@ -21,9 +21,9 @@ We use three different Monte-Carlo simulation techniques:
 - Variance reduction using stratified sampling
 
 All simulations are based on geometric brownian motion modelling for stock prices
-$$
+```math
 dX_t=rXdt+\sigma XdW_t
-$$
+```
 
 ## Configuration
 
@@ -48,8 +48,8 @@ In the [configuration file](config.ini), the user can modify the project paramet
 For each trajectory, the program will compute it's future cash-flow at T $CF_T$.
 The value of the option is then computed by discounting the expected cash-flow at the risk-free
 rate
-$$
+```math
 C=e^{-rT}\mathbb{E}[CF_T]
-$$
+```
 
 The results are printed in the console and saved in the data folder under `prices.csv`.
