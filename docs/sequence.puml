@@ -33,7 +33,7 @@ end
 
 group Simulation
 Simulator->Simulator: Initialise simulation\nparameters
-loop #LightBlue Simulation methods`
+loop #LightBlue Simulation methods
 Simulator->Simulator: Run Monte-Carlo\nsimulations using\ncurrent method
 Simulator->"Local data": Store simulated\ntrajectories
 activate "Local data"

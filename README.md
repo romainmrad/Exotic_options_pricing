@@ -57,3 +57,52 @@ The results are printed in the console and saved in the data folder under `price
 ## Sequence diagram
 
 ![](docs/sequence.svg)
+
+Here is an example output of the program with the user inputing stock ticker `AAPL` (Apple)
+
+## Example output
+
+```shell
+Loading configuration
+Fetching data
+Enter ticker symbol: AAPL
+[*********************100%***********************]  1 of 1 completed
+
+Executing simulations
+	Executing Naive Monte-Carlo simulation
+	Executing Antithetic variables Monte-Carlo simulation
+	Executing Stratified Sampling Monte-Carlo simulation
+
+Pricing options using naive simulation
+	Pricing vanilla option
+	Pricing asian arithmetic mean price option
+	Pricing asian geometric mean price option
+	Pricing knock-in barrier option
+	Pricing knock-out barrier option
+	Pricing lookback option
+
+Pricing options using antithetic simulation
+	Pricing vanilla option
+	Pricing asian arithmetic mean price option
+	Pricing asian geometric mean price option
+	Pricing knock-in barrier option
+	Pricing knock-out barrier option
+	Pricing lookback option
+
+Pricing options using stratified simulation
+	Pricing vanilla option
+	Pricing asian arithmetic mean price option
+	Pricing asian geometric mean price option
+	Pricing knock-in barrier option
+	Pricing knock-out barrier option
+	Pricing lookback option
+
+Results:
+        Option type Naive simulation Antithetic simulation Stratified simulation
+1           Vanilla             7.58                  6.17                  7.77
+2  Asian arithmetic             2.07                  1.56                  2.17
+3   Asian geometric             1.92                  1.45                  2.02
+4          Knock-in             6.93                  5.33                  7.13
+5         Knock-out             6.63                  5.74                  6.76
+6          Lookback            27.19                 26.81                 27.74
+```
