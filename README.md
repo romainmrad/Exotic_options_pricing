@@ -3,7 +3,18 @@
 This project aims to implement risk-neutral pricing for some of the most well-known exotic derivatives using
 Monte-Carlo simulations.
 
-Here is the [Sequence diagram](docs/sequence.pdf) presenting the workflow of the project.
+## Requirements
+
+This project uses the following python packages
+
+```requirements
+pandas>=2.2.3
+numpy>=2.2.4
+scipy>=1.15.2
+yfinance>=0.2.55
+```
+
+## Specifications
 
 The implemented call options are:
 
@@ -23,6 +34,10 @@ We use three different Monte-Carlo simulation techniques:
 All simulations are based on geometric brownian motion modelling for stock prices
 ```math
 dX_t=rXdt+\sigma XdW_t
+```
+Each time step of a trajectory is computed as follows, with $Z\sim\mathcal{N}(0,1)$
+```math
+S_t=S_0e^{(r-\frac{1}{2}\sigma^2)t+\sigma\sqrt{t}Z}
 ```
 
 ## Configuration
