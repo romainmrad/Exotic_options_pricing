@@ -56,11 +56,17 @@ The results are printed in the console and saved in the data folder under `price
 
 ## Sequence diagram
 
+You can find the different sequence diagrams versions here
+- [Plant UML file](docs/sequence.puml)
+- [PDF file](docs/sequence.pdf)
+- [SVG file (displayed belowed)](docs/sequence.svg)
+
 ![](docs/sequence.svg)
+
+## Example output
 
 Here is an example output of the program with the user inputing stock ticker `AAPL` (Apple)
 
-## Example output
 
 ```shell
 Loading configuration
