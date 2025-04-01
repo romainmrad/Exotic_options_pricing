@@ -1,6 +1,6 @@
 # Exotic options pricing project
 
-This project aims to implement risk-neutral pricing some of the most well-known exotic derivatives using
+This project aims to implement risk-neutral pricing for some of the most well-known exotic derivatives using
 Monte-Carlo simulations.
 
 Here is the [Sequence diagram](docs/sequence.pdf) presenting the workflow of the project.
@@ -53,3 +53,7 @@ C=e^{-rT}\mathbb{E}[CF_T]
 ```
 
 The results are printed in the console and saved in the data folder under `prices.csv`.
+
+## Sequence diagram
+
+![](docs/sequence.svg)
