@@ -16,47 +16,27 @@ participant Initialiser #White
 participant Simulator #White
 database "Local data" #SteelBlue
 participant Pricer #White
-collections Logs #GoldenRod
-
 
 group Initialisation
 Initialiser -> Initialiser: Start
 activate Initialiser #LightSlateGrey
 Initialiser -> Initialiser: Ask user for \nstock ticker symbol
-autonumber stop
-Initialiser --> Logs
-autonumber resume
 Initialiser -> "YFinance API": Send request
 activate "YFinance API" #LightSlateGrey
 "YFinance API"-> Initialiser: Download data
 deactivate "YFinance API"
-autonumber stop
-Initialiser --> Logs
-autonumber resume
 Initialiser -> Simulator: Send data\nfor simulation
 activate Simulator #LightSlateGrey
-autonumber stop
-Initialiser --> Logs
-autonumber resume
 deactivate Initialiser
 deactivate "YFinance API"
 end
 
 group Simulation
 Simulator->Simulator: Initialise simulation\nparameters
-autonumber stop
-Simulator-->Logs
-autonumber resume
 loop #LightBlue Simulation methods`
 Simulator->Simulator: Run Monte-Carlo\nsimulations using\ncurrent method
-autonumber stop
-Simulator-->Logs
-autonumber resume
 Simulator->"Local data": Store simulated\ntrajectories
 activate "Local data"
-autonumber stop
-Simulator-->Logs
-autonumber resume
 deactivate Simulator
 end
 end
@@ -66,19 +46,10 @@ group Pricing
 loop #LightBlue Simulation methods
 "Local data"->Pricer: Load simulated\ntrajectories
 activate Pricer #LightSlateGrey
-autonumber stop
-Pricer-->Logs
-autonumber resume
 loop #LightGreen Option types
 Pricer->Pricer: Price current\noption type
-autonumber stop
-Pricer-->Logs
-autonumber resume
 Pricer->"Local data": Store option\nprice
 deactivate "Local data"
-autonumber stop
-Pricer-->Logs
-autonumber resume
 Pricer->Pricer: Stop
 deactivate Pricer
 end
