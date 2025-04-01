@@ -35,7 +35,7 @@ All simulations are based on geometric brownian motion modelling for stock price
 ```math
 dX_t=rXdt+\sigma XdW_t
 ```
-Each time step of a trajectory is computed as follows, with $Z\sim\mathcal{N}(0,1)$
+Each time step of a trajectory is computed as follows, with $Z\sim\mathcal{N}(0,1)$ and $\sigma$ the historical volatility
 ```math
 S_t=S_0e^{(r-\frac{1}{2}\sigma^2)t+\sigma\sqrt{t}Z}
 ```
