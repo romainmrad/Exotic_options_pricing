@@ -120,10 +120,19 @@ Pricing options using stratified simulation
 
 Results:
         Option type Naive simulation Antithetic simulation Stratified simulation
-1           Vanilla             7.58                  6.17                  7.77
-2  Asian arithmetic             2.07                  1.56                  2.17
-3   Asian geometric             1.92                  1.45                  2.02
-4          Knock-in             6.93                  5.33                  7.13
-5         Knock-out             6.63                  5.74                  6.76
-6          Lookback            27.19                 26.81                 27.74
+1           vanilla            7.994                 6.251                  8.04
+2  asian_arithmetic            2.188                 1.618                 2.347
+3   asian_geometric            2.031                 1.508                 2.189
+4          knock_in           29.797                 27.85                29.209
+5         knock_out            6.964                 5.675                 7.031
+6          lookback           27.793                27.016                28.046
+
+Confidence intervals:
+        Option type Naive simulation Antithetic simulation Stratified simulation
+1           vanilla   [ 7.87,  8.12]        [ 6.15,  6.36]        [ 7.91,  8.17]
+2  asian_arithmetic   [ 2.14,  2.24]        [ 1.58,  1.66]        [ 2.30,  2.40]
+3   asian_geometric   [ 1.99,  2.08]        [ 1.47,  1.55]        [ 2.14,  2.24]
+4          knock_in   [29.43, 30.16]        [27.48, 28.22]        [28.84, 29.57]
+5         knock_out   [ 6.86,  7.07]        [ 5.58,  5.77]        [ 6.92,  7.14]
+6          lookback   [27.61, 27.97]        [26.85, 27.18]        [27.87, 28.22]
 ```

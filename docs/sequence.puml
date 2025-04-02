@@ -48,6 +48,7 @@ loop #LightBlue Simulation methods
 activate Pricer #LightSlateGrey
 loop #LightGreen Option types
 Pricer->Pricer: Price current\noption type
+Pricer->Pricer: Compute confidence\ninterval
 Pricer->"Local data": Store option\nprice
 deactivate "Local data"
 Pricer->Pricer: Stop
