@@ -5,6 +5,7 @@ import os
 
 if __name__ == "__main__":
     os.makedirs("data/simulations", exist_ok=True)
+    os.makedirs("data/payoffs", exist_ok=True)
     config = load_configuration()
     df = fetch_data(config)
     run_simulations(df, config)

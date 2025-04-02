@@ -81,7 +81,7 @@ def stratified_sampling_simulation(data: pd.DataFrame, config: configparser.Conf
     horizon = int(1000 * config.getfloat("simulation", "horizon"))
     trading_days = config.getint("simulation", "trading_days")
     n_trajectories = config.getint("simulation", "n_trajectories")
-    n_strata = config.getint("simulation", "n_strata")  # Number of strata for stratified sampling
+    n_strata = config.getint("simulation", "n_strata")
     if config.getboolean("simulation", "use_seed"):
         np.random.seed(config.getint("simulation", "seed"))
     # Compute volatility and time step
@@ -89,7 +89,7 @@ def stratified_sampling_simulation(data: pd.DataFrame, config: configparser.Conf
     dt = 1 / trading_days
     S0 = float(data.iloc[-1])
     # Stratified sampling: divide the range of S0 into n_strata intervals
-    strata_limits = np.linspace(S0 * 0.8, S0 * 1.2, n_strata + 1)  # You can adjust the limits based on your needs
+    strata_limits = np.linspace(S0 * 0.8, S0 * 1.2, n_strata + 1)
     # Generate random shocks
     Z = np.random.randn(n_trajectories, horizon - 1)
     # Compute Brownian motion increments
@@ -102,7 +102,6 @@ def stratified_sampling_simulation(data: pd.DataFrame, config: configparser.Conf
     for i in range(n_trajectories):
         # Determine the stratum for the current trajectory
         stratum = np.digitize(S0, strata_limits) - 1
-
         # Generate trajectory based on the assigned stratum
         S0_stratum = np.random.uniform(strata_limits[stratum], strata_limits[stratum + 1])
         trajectories[i, 0] = S0_stratum
