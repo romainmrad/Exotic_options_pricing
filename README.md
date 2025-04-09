@@ -91,7 +91,6 @@ Enter ticker symbol: AAPL
 Executing simulations
 	Executing Naive Monte-Carlo simulation
 	Executing Antithetic variables Monte-Carlo simulation
-	Executing Stratified Sampling Monte-Carlo simulation
 
 Pricing options using naive simulation
 	Pricing vanilla option
