@@ -29,7 +29,6 @@ We use three different Monte-Carlo simulation techniques:
 
 - Naive simulations
 - Variance reduction using antithetic variables
-- Variance reduction using stratified sampling
 
 All simulations are based on geometric brownian motion modelling for stock prices
 ```math
@@ -110,29 +109,21 @@ Pricing options using antithetic simulation
 	Pricing knock-out barrier option
 	Pricing lookback option
 
-Pricing options using stratified simulation
-	Pricing vanilla option
-	Pricing asian arithmetic mean price option
-	Pricing asian geometric mean price option
-	Pricing knock-in barrier option
-	Pricing knock-out barrier option
-	Pricing lookback option
-
 Results:
-        Option type Naive simulation Antithetic simulation Stratified simulation
-1           vanilla            7.994                 6.251                  8.04
-2  asian_arithmetic            2.188                 1.618                 2.347
-3   asian_geometric            2.031                 1.508                 2.189
-4          knock_in           29.797                 27.85                29.209
-5         knock_out            6.964                 5.675                 7.031
-6          lookback           27.793                27.016                28.046
+        Option type Naive simulation Antithetic simulation
+1           vanilla            7.994                 6.251
+2  asian_arithmetic            2.188                 1.618
+3   asian_geometric            2.031                 1.508
+4          knock_in           29.797                 27.85
+5         knock_out            6.964                 5.675
+6          lookback           27.793                27.016
 
 Confidence intervals:
-        Option type Naive simulation Antithetic simulation Stratified simulation
-1           vanilla   [ 7.87,  8.12]        [ 6.15,  6.36]        [ 7.91,  8.17]
-2  asian_arithmetic   [ 2.14,  2.24]        [ 1.58,  1.66]        [ 2.30,  2.40]
-3   asian_geometric   [ 1.99,  2.08]        [ 1.47,  1.55]        [ 2.14,  2.24]
-4          knock_in   [29.43, 30.16]        [27.48, 28.22]        [28.84, 29.57]
-5         knock_out   [ 6.86,  7.07]        [ 5.58,  5.77]        [ 6.92,  7.14]
-6          lookback   [27.61, 27.97]        [26.85, 27.18]        [27.87, 28.22]
+        Option type Naive simulation Antithetic simulation
+1           vanilla   [ 7.87,  8.12]        [ 6.15,  6.36]
+2  asian_arithmetic   [ 2.14,  2.24]        [ 1.58,  1.66]
+3   asian_geometric   [ 1.99,  2.08]        [ 1.47,  1.55]
+4          knock_in   [29.43, 30.16]        [27.48, 28.22]
+5         knock_out   [ 6.86,  7.07]        [ 5.58,  5.77]
+6          lookback   [27.61, 27.97]        [26.85, 27.18]
 ```

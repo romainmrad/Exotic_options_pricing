@@ -30,8 +30,11 @@ def confidence_interval(
     :param n: size of the array
     :return: confidence interval
     """
-    lb = mean - np.sqrt(sigma2 / n)
-    ub = mean + np.sqrt(sigma2 / n)
+    if sigma2 == 0:
+        lb, ub = mean, mean
+    else:
+        lb = mean - np.sqrt(sigma2 / n)
+        ub = mean + np.sqrt(sigma2 / n)
     return f'[{lb:>5.2f}, {ub:>5.2f}]'
 
 
@@ -44,7 +47,7 @@ def format_output_df(df: pd.DataFrame) -> pd.DataFrame:
     formatted_df = df.transpose()
     formatted_df.reset_index(inplace=True)
     formatted_df.drop(index=formatted_df.index[0], inplace=True)
-    formatted_df.columns = ["Option type", "Naive simulation", "Antithetic simulation", "Stratified simulation"]
+    formatted_df.columns = ["Option type", "Naive simulation", "Antithetic simulation"]
     return formatted_df
 
 
@@ -218,7 +221,7 @@ def compute_option_prices(config: configparser.ConfigParser) -> None:
     Compute option prices for each option for each simulation
     :param config: Configuration parser object
     """
-    simulation_methods = ["naive", "antithetic", "stratified"]
+    simulation_methods = ["naive", "antithetic"]
     options = {
         "vanilla": compute_vanilla_price,
         "asian_arithmetic": compute_asian_arithmetic_price,

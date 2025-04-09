@@ -13,3 +13,8 @@ __pycache__/
 pyproject.toml
 *.csv
 *.npy
+docs/landscape_doc/
+*.ipynb
+simulation_visualisation.py
+confidence_viz.py
+
