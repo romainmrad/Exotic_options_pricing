@@ -155,8 +155,10 @@ def compute_knock_in_price(
     barrier = data.iloc[0, 0] * barrier_multiplier
     payoffs = []
     for col in data.columns:
-        if any(data[col] > barrier):
+        if any(data[col] >= barrier):
             payoffs.append(np.exp(-r * horizon) * max(data[col].iloc[-1] - strike, 0))
+        else:
+            payoffs.append(0)
     np.save(f"./data/payoffs/{method}_knock_in.npy", np.array(payoffs))
     return round(np.mean(payoffs), 3)
 
@@ -186,6 +188,8 @@ def compute_knock_out_price(
     for col in data.columns:
         if all(data[col] < barrier):
             payoffs.append(np.exp(-r * horizon) * max(data[col].iloc[-1] - strike, 0))
+        else:
+            payoffs.append(0)
     np.save(f"./data/payoffs/{method}_knock_out.npy", np.array(payoffs))
     return round(np.mean(payoffs), 3)
 

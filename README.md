@@ -110,19 +110,19 @@ Pricing options using antithetic simulation
 
 Results:
         Option type Naive simulation Antithetic simulation
-1           vanilla            7.994                 6.251
-2  asian_arithmetic            2.188                 1.618
-3   asian_geometric            2.031                 1.508
-4          knock_in           29.797                 27.85
-5         knock_out            6.964                 5.675
-6          lookback           27.793                27.016
+1           vanilla            7.127                  5.77
+2  asian_arithmetic            2.045                 1.554
+3   asian_geometric            1.899                 1.447
+4          knock_in            1.045                 0.534
+5         knock_out            6.082                 5.236
+6          lookback           24.818                24.441
 
 Confidence intervals:
         Option type Naive simulation Antithetic simulation
-1           vanilla   [ 7.87,  8.12]        [ 6.15,  6.36]
-2  asian_arithmetic   [ 2.14,  2.24]        [ 1.58,  1.66]
-3   asian_geometric   [ 1.99,  2.08]        [ 1.47,  1.55]
-4          knock_in   [29.43, 30.16]        [27.48, 28.22]
-5         knock_out   [ 6.86,  7.07]        [ 5.58,  5.77]
-6          lookback   [27.61, 27.97]        [26.85, 27.18]
+1           vanilla   [ 7.01,  7.24]        [ 5.67,  5.87]
+2  asian_arithmetic   [ 2.00,  2.09]        [ 1.52,  1.59]
+3   asian_geometric   [ 1.86,  1.94]        [ 1.41,  1.48]
+4          knock_in   [ 0.98,  1.11]        [ 0.48,  0.58]
+5         knock_out   [ 5.99,  6.18]        [ 5.15,  5.32]
+6          lookback   [24.66, 24.98]        [24.30, 24.59]
 ```
